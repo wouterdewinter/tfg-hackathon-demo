@@ -1,0 +1,35 @@
+@import 'normalize.sass/normalize';
+@import 'bootstrap/scss/bootstrap';
+
+$dark: #004289;
+
+html, body, .fill-height {
+  height: 100%;
+}
+
+.content-panel {
+  background-color: $dark;
+  color: #FFF;
+}
+
+.content-panel-button {
+  background: #FFF;
+  border: none;
+  padding: 6px 20px;
+  color: $dark;
+  border-radius: 60px;
+}
+
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.variable-list {
+  width: 100%;
+}
+
+.variable-list-item {
+  cursor: pointer;
+}
