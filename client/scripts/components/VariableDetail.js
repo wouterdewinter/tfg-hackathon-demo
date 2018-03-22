@@ -24,7 +24,7 @@ class VariableDetail extends React.Component {
     console.log('on click on chart', event);
 
     const category = categories[event.point.index];
-    this.selectCohort(category);
+    this.props.selectCohort(category);
   }
   fetchVariableDataIfNeeded() {
     const { variableData, isFetchingVariableData, selectedVariable } = this.props;
@@ -41,6 +41,9 @@ class VariableDetail extends React.Component {
 
     return {
       chart: {
+        animation: {
+          duration: 500
+        },
         backgroundColor: 'transparent',
         type: 'column'
       },
@@ -79,6 +82,25 @@ class VariableDetail extends React.Component {
         name,
         data
       }],
+      tooltip: {
+        backgroundColor: {
+          linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
+          stops: [
+            [0, '#F37021'],
+            [1, '#CE0E4A']
+          ]
+        },
+        borderRadius: 15,
+        borderWidth: 0,
+        shadow: false,
+        useHTML: true,
+        style: {
+          color: '#FFFFFF'
+        },
+        formatter: function() {
+          return `${this.y}% for ${this.series.name} of ${this.x}`;
+        }
+      },
       plotOptions: {
         series: {
           borderRadius: 3,

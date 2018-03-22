@@ -17,7 +17,24 @@ html, body, .fill-height {
   border: none;
   padding: 6px 20px;
   color: $dark;
+  border: 1px solid #FFF;
   border-radius: 60px;
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+
+  &:hover {
+    background-color: $dark;
+    color: #FFF;
+  }
+}
+
+.content-panel-button + .content-panel-button {
+  margin-left: 10px;
+}
+
+.content-panel__container {
+  width: 100%;
+  max-width: 640px;
 }
 
 .vertical-center {
