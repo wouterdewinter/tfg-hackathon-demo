@@ -55,8 +55,6 @@ class VariableDetail extends React.Component {
     const weight = data.reduce((sum, point) => sum + point, 0);
     const weightedData = data.map(point => Math.round(point / weight * 100) / 100);
 
-    console.log(weight, data, weightedData);
-
     return {
       chart: {
         animation: {

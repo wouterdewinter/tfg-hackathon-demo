@@ -1,5 +1,5 @@
 import fetch from '../utils/fetch';
-import buckets from './data/buckets.json';
+// import buckets from './data/buckets.json';
 
 export function getVariableData() {
   // return new Promise(resolve => {
