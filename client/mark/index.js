@@ -15,7 +15,7 @@ var success = function (jwt) {
     alert("Success");
 }
 var warning = function () {
-    console.log("Warning:", arguments);
+    window.location.href = '/chart';
 }
 var error = function () {
     console.log("Error:", arguments);
@@ -28,4 +28,8 @@ window.addEventListener('DOMContentLoaded', function() {
   var $modal = $('#irma-server-modal');
   $('.modal-backdrop').remove();
   $modal.removeClass('modal fade').appendTo('.box-content');
+});
+
+window.addEventListener('keypress', function() {
+  if (event.keyCode === 100) window.location.href = '/chart';
 });

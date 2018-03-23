@@ -76,6 +76,18 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 200px;
+      height: 50px;
+      top: 20px;
+      right: 20px;
+      background: url(/static/logo-white.png) right top no-repeat;
+      background-size: contain;
+    }
 }
 
 .content .subtitle {

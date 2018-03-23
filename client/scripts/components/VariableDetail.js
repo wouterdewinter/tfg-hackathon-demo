@@ -52,6 +52,10 @@ class VariableDetail extends React.Component {
     const name = getVariableName(selectedVariable);
     const categories = Object.keys(variableDataForVariable);
     const data = categories.map(category => variableDataForVariable[category]);
+    const weight = data.reduce((sum, point) => sum + point, 0);
+    const weightedData = data.map(point => Math.round(point / weight * 100) / 100);
+
+    console.log(weight, data, weightedData);
 
     return {
       chart: {
@@ -95,7 +99,7 @@ class VariableDetail extends React.Component {
       },
       series: [{
         name,
-        data
+        data: weightedData
       }],
       tooltip: {
         backgroundColor: {
