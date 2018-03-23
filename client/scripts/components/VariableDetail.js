@@ -59,7 +59,8 @@ class VariableDetail extends React.Component {
           duration: 500
         },
         backgroundColor: 'transparent',
-        type: 'column'
+        type: 'column',
+        height: 300
       },
       title: null,
       subtitle: null,

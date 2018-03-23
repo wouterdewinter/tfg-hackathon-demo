@@ -32,3 +32,23 @@
    font-weight: bold;
    font-style: normal;
  }
+
+ @font-face {
+   font-family: 'Rockwell';
+   src: url('/static/Rockwell-Bold.eot?#iefix') format('embedded-opentype'),
+      url('/static/Rockwell-Bold.woff') format('woff'),
+      url('/static/Rockwell-Bold.ttf')  format('truetype'),
+      url('/static/Rockwell-Bold.svg#Rockwell-Bold') format('svg');
+   font-weight: bold;
+   font-style: normal;
+ }
+
+ @font-face {
+   font-family: 'Rockwell';
+   src: url('/static/Rockwell.eot?#iefix') format('embedded-opentype'),
+      url('/static/Rockwell.woff') format('woff'),
+      url('/static/Rockwell.ttf')  format('truetype'),
+      url('/static/Rockwell.svg#Rockwell-Bold') format('svg');
+   font-weight: normal;
+   font-style: normal;
+ }
