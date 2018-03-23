@@ -11,7 +11,10 @@ export function getVariableData() {
 export function submitData(age, gender) {
   return fetch.json('/save', {
     method: 'POST',
-    body: JSON.stringify({ age, gender })
+    body: JSON.stringify({ age, gender }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
 }
 

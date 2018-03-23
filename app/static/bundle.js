@@ -154,17 +154,6 @@ function deselectCohort() {
 
 /***/ }),
 
-/***/ "./client/scripts/api/data/buckets.json":
-/*!**********************************************!*\
-  !*** ./client/scripts/api/data/buckets.json ***!
-  \**********************************************/
-/*! exports provided: age, gender, default */
-/***/ (function(module) {
-
-module.exports = {"age":{"0-10":0.41,"10-20":0.42,"20-30":0.47,"30-40":0.53,"50-60":0.55,"60-70":0.25,"70+":0.23},"gender":{"female":0.58,"male":0.42}};
-
-/***/ }),
-
 /***/ "./client/scripts/api/index.js":
 /*!*************************************!*\
   !*** ./client/scripts/api/index.js ***!
@@ -186,11 +175,9 @@ var _fetch = __webpack_require__(/*! ../utils/fetch */ "./client/scripts/utils/f
 
 var _fetch2 = _interopRequireDefault(_fetch);
 
-var _buckets = __webpack_require__(/*! ./data/buckets.json */ "./client/scripts/api/data/buckets.json");
-
-var _buckets2 = _interopRequireDefault(_buckets);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import buckets from './data/buckets.json';
 
 function getVariableData() {
   // return new Promise(resolve => {
@@ -202,7 +189,10 @@ function getVariableData() {
 function submitData(age, gender) {
   return _fetch2.default.json('/save', {
     method: 'POST',
-    body: JSON.stringify({ age: age, gender: gender })
+    body: JSON.stringify({ age: age, gender: gender }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
 }
 
@@ -458,8 +448,6 @@ var VariableDetail = function (_React$Component) {
       var weightedData = data.map(function (point) {
         return Math.round(point / weight * 100) / 100;
       });
-
-      console.log(weight, data, weightedData);
 
       return {
         chart: {
