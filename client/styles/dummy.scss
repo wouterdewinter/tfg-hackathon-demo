@@ -50,3 +50,15 @@ h3 {
     text-decoration: none;
   }
 }
+
+.request-button {
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 20px;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
