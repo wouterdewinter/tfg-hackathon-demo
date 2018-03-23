@@ -11,11 +11,11 @@ class Form extends React.Component {
       <div className='form-logo'/>
 
       <div className='content-panel'>
-        <h2 className='text-center' style={{ marginBottom: 20 }}>
-          Secure your equal treatment
+        <h2 className='text-center' style={{ marginBottom: 15 }}>
+          Secure equal treatment
         </h2>
 
-        <div className='text-center' style={{ marginBottom: 20 }}>
+        <div className='text-center' style={{ marginBottom: 15 }}>
           <div className='label'>Enter your age</div>
 
           <input
