@@ -14,25 +14,42 @@ import sys
 
 app = Flask(__name__, static_url_path='/static')
 
-# data = {
-#     "age": {
-#         "0-10": 0.41,
-#         "10-20": 0.42,
-#         "20-30": 0.47,
-#         "30-40": 0.53,
-#         "50-60": 0.55,
-#         "60-70": 0.25,
-#         "70+": 0.23
-#     },
-#     "gender": {
-#         "male": 0.22,
-#         "female": 0.25
-#     }
-# }
+initial_data = [
+    {
+        "age": 10,
+        "gender": "m",
+        "result": 1
+    },
+    {
+        "age": 33,
+        "gender": "f",
+        "result": 0
+    },
+    {
+        "age": 44,
+        "gender": "m",
+        "result": 0
+    },
+    {
+        "age": 55,
+        "gender": "f",
+        "result": 1
+    },
+    {
+        "age": 56,
+        "gender": "m",
+        "result": 0
+    },
+    {
+        "age": 81,
+        "gender": "f",
+        "result": 0
+    }
+]
 
 records = []
 
-df = pd.DataFrame(columns=['age', 'gender', 'result'])
+df = pd.DataFrame(data=initial_data, columns=['age', 'gender', 'result'])
 df['result'] = df['result'].astype('int')
 
 
@@ -66,4 +83,10 @@ def save():
     global df
     item = request.get_json()
     df = df.append(item, ignore_index=True)
+    return jsonify({"result": "ok"})
+
+@app.route("/flush", methods=['POST'])
+def flush():
+    global df
+    df = df.iloc[0:0]
     return jsonify({"result": "ok"})
