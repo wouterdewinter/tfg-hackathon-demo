@@ -12,10 +12,3 @@ services:
       FLASK_APP: server.py
       FLASK_DEBUG: 1
     command: ["source activate snoek && flask run --with-threads --host=0.0.0.0"]
-  notebooks:
-    build: .
-    ports:
-      - "8888:8888"
-    volumes:
-      - .:/opt/src
-    command: ["jupyter notebook --notebook-dir=notebooks --ip='*' --no-browser --allow-root"]

@@ -2,14 +2,10 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, request, jsonify, render_template
-from elasticsearch import Elasticsearch
-from elasticsearch_dsl import Search
-from google.cloud import speech
-from sklearn.externals import joblib
 import pandas as pd
+import numpy as np
 import time
 import random
-import requests
 import sys
 
 app = Flask(__name__, static_url_path='/static')
@@ -90,8 +86,20 @@ def stats():
 def save():
     global df
     item = request.get_json()
+
+    rand = np.random.rand()
+
+    if item['age'] > 30:
+        result = rand > .8
+    else:
+        result = rand > .4
+
+    result = 1 if result else 0
+    item['result'] = result
+
     df = df.append(item, ignore_index=True)
-    return jsonify({"result": "ok"})
+
+    return jsonify({"result": result})
 
 @app.route("/flush", methods=['POST'])
 def flush():
