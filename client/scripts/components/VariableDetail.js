@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { VARIABLE_AGE, VARIABLE_GENDER } from '../constants';
 import { deselectVariable, fetchVariableData, selectCohort } from '../actions';
 import getVariableName from '../utils/getVariableName';
+import Spinner from './Spinner';
 
 const ReactWithHighcharts = ReactHighcharts.withHighcharts(Highcharts);
 
@@ -139,15 +140,24 @@ class VariableDetail extends React.Component {
   renderChart() {
     if (!this.props.variableData) return null;
 
-    return <ReactWithHighcharts config={this.getChartConfig()}/>;
+    return <ReactWithHighcharts
+      config={this.getChartConfig()}
+      domProps={{
+        className: 'variable-detail-chart'
+      }}/>;
+  }
+  renderSpinner() {
+    if (this.props.variableData) return null;
+    if (!this.props.isFetchingVariableData) return null;
+
+    return <Spinner/>;
   }
   render() {
     if (!this.props.selectedVariable) return null;
 
     return <div className='variable-detail'>
-      <div>
-        {this.renderChart()}
-      </div>
+      {this.renderChart()}
+      {this.renderSpinner()}
     </div>;
   }
 }

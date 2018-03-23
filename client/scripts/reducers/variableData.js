@@ -9,7 +9,7 @@ export default function selectedVariableReducer(state = {}, action) {
     case ACTION_FETCH_VARIABLE_DATA:
       return {
         ...state,
-        isFetching: false
+        isFetching: true
       };
 
     case ACTION_FETCH_VARIABLE_DATA_SUCCESS:
