@@ -64,3 +64,13 @@ input[type=text] {
   font-size: 20px;
   border-radius: 10px;
 }
+
+.box-container {
+  left: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.content {
+  display: none;
+}

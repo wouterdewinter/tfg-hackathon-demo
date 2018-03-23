@@ -1,3 +1,8 @@
+@import './fonts';
+
+$light: #88eebb;
+$dark: #5bc4bf;
+
 .container-fluid {
   display: none;
 }
@@ -5,4 +10,43 @@
 input {
   padding: 5px 10px;
   width: 300px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.product-widget {
+  padding: 20px;
+  background: $dark;
+  background: -moz-linear-gradient(top, $dark 0%, $light 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $dark), color-stop(100%, $light));
+  background: -webkit-linear-gradient(top, $dark 0%, $light 100%);
+  background: -o-linear-gradient(top, $dark 0%, $light 100%);
+  background: -ms-linear-gradient(top, $dark 0%, $light 100%);
+  background: linear-gradient(to bottom, $dark 0%, $light 100%);
+}
+
+.product-widget-content {
+  background: #FFF;
+  padding: 10px;
+}
+
+.product-widget-button {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  font-family: Rockwell, 'Helvetica Neue', sans-serif;
+  background: $dark;
+  background: -moz-linear-gradient(top, $dark 0%, $light 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $dark), color-stop(100%, $light));
+  background: -webkit-linear-gradient(top, $dark 0%, $light 100%);
+  background: -o-linear-gradient(top, $dark 0%, $light 100%);
+  background: -ms-linear-gradient(top, $dark 0%, $light 100%);
+  background: linear-gradient(to bottom, $dark 0%, $light 100%);
+
+  &:hover {
+    color: #004289;
+    text-decoration: none;
+  }
 }
