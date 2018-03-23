@@ -159,7 +159,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".container-fluid {\n  display: none; }\n", "", {"version":3,"sources":["/Users/jnanista/workspace/tfg-hackathon-demo/client/styles/dummy.scss"],"names":[],"mappings":"AAAA;EACE,cAAc,EAAE","file":"dummy.scss","sourcesContent":[".container-fluid {\n  display: none; }\n"],"sourceRoot":""}]);
+exports.push([module.i, ".container-fluid {\n  display: none; }\n\ninput {\n  padding: 5px 10px;\n  width: 300px; }\n", "", {"version":3,"sources":["/Users/jnanista/workspace/tfg-hackathon-demo/client/styles/dummy.scss"],"names":[],"mappings":"AAAA;EACE,cAAc,EAAE;;AAElB;EACE,kBAAkB;EAClB,aAAa,EAAE","file":"dummy.scss","sourcesContent":[".container-fluid {\n  display: none; }\n\ninput {\n  padding: 5px 10px;\n  width: 300px; }\n"],"sourceRoot":""}]);
 
 // exports
 
