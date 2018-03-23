@@ -34,7 +34,11 @@ export function submit(age, gender) {
     dispatch({ type: ACTION_FORM_SUBMIT });
 
     return submitData(age, gender).then(
-      result => dispatch({ type: ACTION_FORM_SUBMIT_SUCCESS, result })
+      result => {
+        dispatch({ type: ACTION_FORM_SUBMIT_SUCCESS, result });
+
+        window.location.href = `/response?success=${Number(result.result)}`;
+      }
     ).catch(
       () => dispatch({ type: ACTION_FORM_SUBMIT_ERROR })
     );

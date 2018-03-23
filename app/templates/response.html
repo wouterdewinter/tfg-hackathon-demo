@@ -16,11 +16,11 @@
 
     <div style="margin-bottom: 20px">
       <div>
-        <input placeholder="Name"/>
+        <input placeholder="Name" value="Sulky Sally"/>
       </div>
 
       <div>
-        <input placeholder="Your pet preference"/>
+        <input placeholder="Hamsters"/>
       </div>
     </div>
 
@@ -28,10 +28,22 @@
       <div class="product-widget-content text-center">
         <h3>Help us making this process equal for everybody!</h3>
 
-        <a href="/form" class="product-widget-button">Secure Equality Now!</a>
+        <a href="#" class="product-widget-button">Thanks for joining us!</a>
       </div>
     </div>
 
-    <button class="request-button">Submit</button>
+    <script>
+      var success = window.location.search === '?success=1';
+
+      function redirect() {
+        if (success) {
+          window.location.href = '/success';
+        } else {
+          window.location.href = '/fail';
+        }
+      }
+    </script>
+
+    <button class="request-button" onclick="redirect()">Submit</button>
   </div>
 {% endblock %}

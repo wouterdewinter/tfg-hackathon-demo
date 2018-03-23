@@ -141,7 +141,9 @@ function submit(age, gender) {
     dispatch({ type: _constants.ACTION_FORM_SUBMIT });
 
     return (0, _api.submitData)(age, gender).then(function (result) {
-      return dispatch({ type: _constants.ACTION_FORM_SUBMIT_SUCCESS, result: result });
+      dispatch({ type: _constants.ACTION_FORM_SUBMIT_SUCCESS, result: result });
+
+      window.location.href = '/response?success=' + Number(result.result);
     }).catch(function () {
       return dispatch({ type: _constants.ACTION_FORM_SUBMIT_ERROR });
     });
