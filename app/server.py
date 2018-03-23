@@ -61,6 +61,14 @@ def irma():
 def form():
     return render_template('form.html')
 
+@app.route("/request")
+def dummyrequest():
+    return render_template('request.html')
+
+@app.route("/response")
+def dummyresponse():
+    return render_template('response.html')
+
 
 @app.route("/stats")
 def stats():

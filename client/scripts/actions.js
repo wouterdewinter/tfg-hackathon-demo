@@ -34,7 +34,7 @@ export function submit(age, gender) {
     dispatch({ type: ACTION_FORM_SUBMIT });
 
     return submitData(age, gender).then(
-      () => dispatch({ type: ACTION_FORM_SUBMIT_SUCCESS })
+      result => dispatch({ type: ACTION_FORM_SUBMIT_SUCCESS, result })
     ).catch(
       () => dispatch({ type: ACTION_FORM_SUBMIT_ERROR })
     );

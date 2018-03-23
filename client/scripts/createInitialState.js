@@ -15,7 +15,8 @@ export default function createInitalState() {
     form: {
       age: 32,
       gender: 'female',
-      isSubmitting: false
+      isSubmitting: false,
+      result: null
     }
   };
 }

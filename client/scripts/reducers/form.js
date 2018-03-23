@@ -31,7 +31,8 @@ export default function selectedVariableReducer(state = {}, action) {
     case ACTION_FORM_SUBMIT_SUCCESS:
       return {
         ...state,
-        isSubmitting: false
+        isSubmitting: false,
+        result: action.result.result
       };
 
     default:

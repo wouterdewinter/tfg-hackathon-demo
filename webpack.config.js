@@ -8,7 +8,8 @@ module.exports = {
   entry: {
     bundle: './client/scripts',
     form: './client/scripts/form',
-    mark: './client/mark'
+    mark: './client/mark',
+    dummyform: './client/dummyform'
   },
   output: {
     path: path.resolve(__dirname, 'app/static'),
