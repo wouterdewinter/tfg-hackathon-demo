@@ -1,6 +1,7 @@
 @import 'normalize.sass/normalize';
 @import 'bootstrap/scss/bootstrap';
 @import './fonts';
+@import './svg';
 
 $dark: #004289;
 
@@ -250,8 +251,19 @@ html, body, .fill-height {
 
 
 
-
+.content-list-item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .content-list-item__number {
   font-size: 48px;
+  margin-right: 20px;
+}
+
+.content-list-item__text {
+  margin-top: 10px;
+  text-align: left;
 }

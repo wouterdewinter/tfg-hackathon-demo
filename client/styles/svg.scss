@@ -1,0 +1,100 @@
+.svg {
+       height: 125px;
+       width: 125px;
+       position: absolute;
+       z-index: 100;
+       opacity: 0.05;
+       animation: floatdefault 13s infinite;
+       animation-directon: normal;
+       pointer-events: none;
+   }
+
+   .svg-data {
+       animation: float1 13s infinite;
+   }
+
+   .svg-colors {
+       animation: float2 10s infinite;
+   }
+
+   .svg-age {
+       animation: float3 15s infinite;
+   }
+
+   .svg-education {
+       animation: float1 12s infinite;
+   }
+
+   .svg-scales {
+       animation: float2 17s infinite;
+   }
+
+   .svg-colors {
+       animation: float3 14s infinite;
+   }
+
+   @keyframes floatdefault {
+       0% {
+           transform: translate(0, 0);
+           -webkit-animation-timing-function: ease-in;
+
+       }
+       50% {
+           transform: translate(50px, 60px);
+           animation-timing-function: ease-out;
+       }
+       100% {
+           transform: translate(0, 0);
+           animation-timing-function: ease-out;
+       }
+   }
+
+   @keyframes float1 {
+       0% {
+           transform: translate(0, 0);
+           -webkit-animation-timing-function: ease-in;
+       }
+       50% {
+           transform: translate(75px, -60px);
+           animation-timing-function: ease-out;
+       }
+       100% {
+           transform: translate(0, 0);
+           animation-timing-function: ease-out;
+       }
+   }
+
+   @keyframes float2 {
+       0% {
+           transform: translate(0, 0);
+           -webkit-animation-timing-function: ease-in;
+       }
+       50% {
+           transform: translate(-58px, 30px);
+           animation-timing-function: ease-out;
+       }
+       100% {
+           transform: translate(0, 0);
+           animation-timing-function: ease-out;
+       }
+   }
+
+   @keyframes float3 {
+       0% {
+           transform: translate(0, 0);
+           -webkit-animation-timing-function: ease-in;
+
+       }
+       50% {
+           transform: translate(42px, -33px);
+           animation-timing-function: ease-out;
+       }
+       100% {
+           transform: translate(0, 0);
+           animation-timing-function: ease-out;
+       }
+   }
+
+   body {
+       overflow: hidden;
+   }
