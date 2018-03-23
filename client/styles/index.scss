@@ -53,14 +53,15 @@ nav {
 }
 
 .box-content {
-    width: 455px;
-    height: 570px;
-    margin: 0 25px;
-    border-radius: 5px;
+  // width: 455px;
+  // height: 570px;
+  // margin: 0 25px;
+  // border-radius: 5px;
 }
 
 .modal-content {
     border-radius: 25px !important;
+    transform: scale(0.7);
 }
 .modal-dialog {
     margin: 0;
