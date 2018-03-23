@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 import { VARIABLE_AGE, VARIABLE_GENDER } from '../constants';
 import { deselectVariable, fetchVariableData, selectCohort } from '../actions';
-import getVariableDescription from '../utils/getVariableDescription';
 import getVariableName from '../utils/getVariableName';
 
 const ReactWithHighcharts = ReactHighcharts.withHighcharts(Highcharts);
@@ -16,9 +15,25 @@ const VARIABLES = [VARIABLE_AGE, VARIABLE_GENDER];
 class VariableDetail extends React.Component {
   componentDidMount() {
     this.fetchVariableDataIfNeeded();
+    this.startFetchingData();
   }
   componentDidUpdate() {
     this.fetchVariableDataIfNeeded();
+  }
+  componentWillUnmount() {
+    this.stopFetchingData();
+  }
+  startFetchingData() {
+    this.stopFetchingData();
+
+    this.timer = setInterval(this.props.fetchVariableData, 1000);
+    this.fetchVariableDataIfNeeded();
+  }
+  stopFetchingData() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
   }
   onClickOnChart(categories, event) {
     console.log('on click on chart', event);
@@ -130,12 +145,6 @@ class VariableDetail extends React.Component {
     if (!this.props.selectedVariable) return null;
 
     return <div className='variable-detail'>
-      <h1>{getVariableName(this.props.selectedVariable)}</h1>
-
-      <p>
-        {getVariableDescription(this.props.selectedVariable)}
-      </p>
-
       <div>
         {this.renderChart()}
       </div>

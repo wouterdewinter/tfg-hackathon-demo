@@ -10,7 +10,7 @@ import createInitialState from './createInitialState';
 
 const initialState = createInitialState();
 const store = createStore(initialState);
-const container = document.querySelector('#app');
+const container = document.querySelector('.content');
 
 ReactDOM.render(
   <Provider store={store}>

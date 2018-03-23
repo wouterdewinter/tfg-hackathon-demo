@@ -6,8 +6,10 @@ import VariableList from './VariableList';
 
 export default class App extends React.Component {
   render() {
-    return <div className='content-panel fill-height vertical-center'>
-      <div className='content-panel__container'>
+    return <div className='app'>
+      <h1 className='content-title text-right'>Statistics</h1>
+
+      <div className='content-panel'>
         <VariableDetail/>
         <VariableHelp/>
         <VariableList/>

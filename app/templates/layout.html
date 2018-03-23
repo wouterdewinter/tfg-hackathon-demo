@@ -8,6 +8,12 @@
     {% endblock %}
   </head>
   <body>
+    <div class="sidebar">
+      {% block sidebar %}{% endblock %}
+    </div>
+
+    <div class="content vertical-center">
       {% block content %}{% endblock %}
+    </div>
   </body>
 </html>
