@@ -7,6 +7,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     bundle: './client/scripts',
+    form: './client/scripts/form',
     mark: './client/mark'
   },
   output: {

@@ -7,10 +7,45 @@ import {
 
   ACTION_FETCH_VARIABLE_DATA,
   ACTION_FETCH_VARIABLE_DATA_SUCCESS,
-  ACTION_FETCH_VARIABLE_DATA_ERROR
+  ACTION_FETCH_VARIABLE_DATA_ERROR,
+
+  ACTION_FORM_SET_AGE,
+  ACTION_FORM_SET_GENDER,
+
+  ACTION_FORM_SUBMIT,
+  ACTION_FORM_SUBMIT_SUCCESS,
+  ACTION_FORM_SUBMIT_ERROR,
+
+  ACTION_FORM_FLUSH
 } from './constants';
 
-import { getVariableData } from './api';
+import { getVariableData, submitData, flushData } from './api';
+
+export function setAge(age) {
+  return { type: ACTION_FORM_SET_AGE, age };
+}
+
+export function setGender(gender) {
+  return { type: ACTION_FORM_SET_GENDER, gender };
+}
+
+export function submit(age, gender) {
+  return dispatch => {
+    dispatch({ type: ACTION_FORM_SUBMIT });
+
+    return submitData(age, gender).then(
+      () => dispatch({ type: ACTION_FORM_SUBMIT_SUCCESS })
+    ).catch(
+      () => dispatch({ type: ACTION_FORM_SUBMIT_ERROR })
+    );
+  };
+}
+
+export function flush() {
+  return dispatch => {
+    return flushData();
+  };
+}
 
 export function fetchVariableData() {
   return dispatch => {

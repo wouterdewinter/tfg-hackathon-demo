@@ -16,7 +16,7 @@ const VARIABLES = [VARIABLE_AGE, VARIABLE_GENDER];
 class VariableDetail extends React.Component {
   componentDidMount() {
     this.fetchVariableDataIfNeeded();
-    // this.startFetchingData();
+    this.startFetchingData();
   }
   componentDidUpdate() {
     this.fetchVariableDataIfNeeded();

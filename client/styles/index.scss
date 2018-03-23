@@ -44,14 +44,6 @@ nav {
     justify-content: center;
 }
 
-.col-auto {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 50%;
-}
-
 .nav {
    position: absolute;
    top: 5px;
@@ -102,6 +94,35 @@ nav {
 }
 .modal-dialog {
     margin: 0;
+}
+
+@media (max-width: 960px) {
+  .box-container {
+    left: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .content {
+    display: none;
+  }
+}
+
+.app--form input[type='number'] {
+  width: 100%;
+  color: $dark;
+}
+
+.app--form input[type='radio'] {
+  margin-right: 3px;
+}
+
+.app--form .row {
+  margin-bottom: 10px;
+}
+
+.app--form .content-panel-button {
+  display: inline-block;
 }
 
 

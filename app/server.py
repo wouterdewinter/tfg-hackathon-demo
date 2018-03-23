@@ -61,6 +61,10 @@ def chart():
 def irma():
     return render_template('irma.html')
 
+@app.route("/form")
+def form():
+    return render_template('form.html')
+
 
 @app.route("/stats")
 def stats():
