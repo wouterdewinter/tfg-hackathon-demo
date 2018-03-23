@@ -17,6 +17,11 @@ initial_data = [
         "result": 1
     },
     {
+        "age": 25,
+        "gender": "f",
+        "result": 0
+    },
+    {
         "age": 33,
         "gender": "f",
         "result": 0
@@ -33,6 +38,16 @@ initial_data = [
     },
     {
         "age": 56,
+        "gender": "m",
+        "result": 0
+    },
+    {
+        "age": 52,
+        "gender": "m",
+        "result": 0
+    },
+    {
+        "age": 62,
         "gender": "m",
         "result": 0
     },
@@ -68,6 +83,14 @@ def dummyrequest():
 @app.route("/response")
 def dummyresponse():
     return render_template('response.html')
+
+@app.route("/success")
+def successresponse():
+    return render_template('success.html')
+
+@app.route("/fail")
+def failresponse():
+    return render_template('fail.html')
 
 
 @app.route("/stats")

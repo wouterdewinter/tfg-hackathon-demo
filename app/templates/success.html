@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Hamsters!{% endblock %}
+
+{% block head %}
+<script src="/static/dummyform.js" type="text/javascript"></script>
+<style>
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: url(/static/checked.png) center center no-repeat;
+    background-size: 200px 200px;
+  }
+</style>
+{% endblock %}
+
+{% block footer %}
+<h1 class="text-center">APPROVED</h1>
+{% endblock %}
