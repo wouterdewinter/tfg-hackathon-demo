@@ -6,7 +6,8 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 module.exports = {
   devtool: 'source-map',
   entry: {
-    bundle: './client/scripts'
+    bundle: './client/scripts',
+    mark: './client/mark'
   },
   output: {
     path: path.resolve(__dirname, 'app/static'),

@@ -53,9 +53,13 @@ df = pd.DataFrame(data=initial_data, columns=['age', 'gender', 'result'])
 df['result'] = df['result'].astype('int')
 
 
-@app.route("/")
-def hello():
-    return render_template('index.html')
+@app.route("/chart")
+def chart():
+    return render_template('chart.html')
+
+@app.route("/irma")
+def irma():
+    return render_template('irma.html')
 
 
 @app.route("/stats")

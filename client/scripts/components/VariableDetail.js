@@ -16,7 +16,7 @@ const VARIABLES = [VARIABLE_AGE, VARIABLE_GENDER];
 class VariableDetail extends React.Component {
   componentDidMount() {
     this.fetchVariableDataIfNeeded();
-    this.startFetchingData();
+    // this.startFetchingData();
   }
   componentDidUpdate() {
     this.fetchVariableDataIfNeeded();
@@ -37,8 +37,6 @@ class VariableDetail extends React.Component {
     }
   }
   onClickOnChart(categories, event) {
-    console.log('on click on chart', event);
-
     const category = categories[event.point.index];
     this.props.selectCohort(category);
   }

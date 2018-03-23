@@ -10,7 +10,7 @@ import createInitialState from './createInitialState';
 
 const initialState = createInitialState();
 const store = createStore(initialState);
-const container = document.querySelector('.content');
+const container = document.querySelector('.box-content');
 
 ReactDOM.render(
   <Provider store={store}>
